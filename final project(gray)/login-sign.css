@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #f0f2f5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-image: url('hero-bg.jpg');
+    background-position: center;
+}
+.container {
+    width: 320px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    border-radius: 16px;
+    border: solid 5px rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-title {
+    margin-bottom: 16px;
+}
+.input-box {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+.input-box input {
+    width: 100%;
+    padding: 10px 16px 10px 38px;
+    border: solid 3px transparent;
+    border-radius: 99px;
+    background: rgb(255, 255, 255, 0.1);
+    outline: none;
+    caret-color: white;
+    color: white;
+    font-weight: 500;
+    transition: 0.25s ;
+} 
+.input-box input:focus {
+    border-color: solid 3px rgb(255, 255, 255, 0.25);
+}
+.input-box input::placeholder {
+
+    color:  rgb(255, 255, 255, 0.75);
+}
+.input-box input::-ms-reveal {
+filter: invert(100%);
+}
+.input-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255, 0.75);
+    font-size: 18px;
+    transition: 0.25s;
+}
+.input-box input:focus +i {
+    color: white;
+}
+.remember-forget-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+}
+.remember-forget-box h5 {
+    font-weight: normal;
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+.remember-me input {
+    margin-right: 8px;
+}
+.forget-password :hover {
+    text-decoration: underline;
+}
+.login-btn {
+    width: 100%;
+    margin-top: 24px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 99px;
+    background: #32cdd5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    outline: transparent 3px solid;
+    transition: 0.1s;
+}
+.login-btn:focus {
+   outline: #32cdd58a 3px solid;
+}
+.dont-have-an-account {
+    font-weight: normal;
+    margin-top: 12px;
+   
+}
+.user-type-select {
+ font-weight: bold;
+  padding: 12px 15px;
+  margin: 1px 0;
+  border: none;
+  border-radius: 25px;
+  background-color: #32cdd5;
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(147, 62, 62, 0.1);
+ 
+
+}
