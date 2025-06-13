@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="index.css" rel="stylesheet" />
+  <title>business directory</title>
+  <link href="./icons/folder_5586904.png" rel="icon" type="image/png" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="left-section">
+      <div class="logo-container">
+        <img alt="Logo" class="logo" height="50" src="./icons/folder_5586904.png" width="60" />
+      </div>
+    </div>
+    <div class="MENU" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="main-navbar" id="mainNavbar">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#businesses">Businesses</a>
+      <a href="#about">About Us</a>
+    </nav>
+    <div class="right-section">
+      <div class="top-header">
+        <a href="sign.html">SignUp</a>
+        <a href="login.html">Login</a>
+      </div>
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div>
+        <h1>Discover Local Businesses</h1>
+        <div class="search-bar">
+          <input placeholder="Search" type="text" />
+          <button>Search</button>
+          <select id="location">
+            <option value="">Select Location</option>
+            <option value="cairo">Cairo</option>
+            <option value="giza">Giza</option>
+            <option value="alexandria">Alexandria</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <div class="categories" id="categories">
+      <a class="cat-link" href="#all">All</a>
+
+      <a class="cat-link" href="#restaurant">
+        <img alt="Restaurant Icon" src="./icons/2034-512.webp"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Restaurants</a>
+
+      <a class="cat-link" href="#cafe">
+        <img alt="Cafe Icon" src="./icons/4510459.png"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Cafes</a>
+
+      <a class="cat-link" href="#retail">
+        <img alt="Retail Icon" src="./icons/12378725.png"
+          style="width:50px; height:40px ; vertical-align:middle; margin-right:5px;" />Retail</a>
+
+      <a class="cat-link" href="#health">
+        <img alt="Healthcare Icon" src="./icons/5201311.png"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Healthcare</a>
+
+      <a class="cat-link" href="#services">
+        <img alt="Services Icon" src="./icons/8458730.png"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Services</a>
+
+      <a class="cat-link" href="#entertainment">
+        <img alt="Entertainment Icon" src="./icons/social-media-online-entertainment-channels-1024.webp"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Entertainment</a>
+
+      <a class="cat-link" href="#fitness">
+        <img alt="Fitness Icon" src="./icons/exercise-dumbbells-gym-fitness-diet-1024.webp"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Fitness</a>
+
+      <a class="cat-link" href="#art">
+        <img alt="Art Icon" src="./icons/5846894.png"
+          style="width:50px; height:40px; vertical-align:middle; margin-right:5px;" />Art</a>
+
+    </div>
+    <div class="business-list" id="businesses">
+      <h2>Business List</h2>
+      <div class="business-scroll-wrapper">
+        <div class="card-container" id="business-container">
+        </div>
+      </div>
+      <a class="add-business-btn" href="add-business.html">Add New Business</a>
+      <button class="btn btn-primary mt-3" id="viewAll">View Activities</button>
+    </div>
+    <section id="about">
+      <h2>About Us</h2>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <p>
+            We connect you with the best and most trusted local businesses in your area. Whether you’re looking for a
+            restaurant, a plumber, or a tech repair shop — we’ve got you covered.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            Our easy-to-use platform helps you find the services you need quickly and efficiently. With smart filters,
+            map views, and categorized listings, navigating the business world has never been simpler.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            We update and verify business listings regularly to ensure accuracy, trustworthiness, and relevance. You can
+            count on us to provide up-to-date information you can rely on.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            Your satisfaction is our top priority. We are committed to creating a seamless user experience so you can
+            browse, explore, and connect with local businesses effortlessly.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            We believe in supporting local economies by promoting neighborhood businesses. When you use our directory,
+            you help small businesses grow and thrive in your community.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            Our platform is accessible across devices, ensuring a smooth experience whether you're using a desktop,
+            tablet, or smartphone. Convenience is just a tap away.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="footer">
+    <div class="container">
+      <img alt="Logo" class="logo" height="80" src="./icons/folder_5586904.png" width="80" />
+      <div class="social-icons">
+        <a href="https://www.facebook.com/">
+          <img src="./icons/facebook_5968764.png" />
+        </a>
+        <a href="https://www.twitter.com/">
+          <img src="./icons/twitter_5968830.png" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="./icons/instagram_2111463.png" />
+        </a>
+        <a href="https://www.linkedin.com/">
+          <img src="./icons/linkedin_3536505.png" />
+        </a>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Business Directory. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <!-- زر السهم -->
+  <a class="scroll-to-top" href="#" id="scrollToTopBtn">⇑</a>
+  <script src="index.js"></script>
+  <script src="index-business-data.js"></script>
+  <script src="index-display-business.js"></script>
+  <script src="index-stars-rating.js"></script>
+  <script src="index-load.js"></script>
+  <script src="index-filter.js"></script>
+  <script src="index-scroll-menu.js"></script>
+  <script src="index-change.js"></script>
+</body>
+
+</html>

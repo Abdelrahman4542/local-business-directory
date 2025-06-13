@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="login-sign.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <form id="signup-form" class="container">
+    <h1 class="login-title">Sign Up</h1>
+
+    <section class="input-box">
+      <input type="text" id="fullname" name="fullname" placeholder="Full Name" required />
+      <i class="bx bxs-user"></i>
+    </section>
+
+    <section class="input-box">
+      <input type="email" id="email" name="email" placeholder="Email" required />
+      <i class="bx bxs-envelope"></i>
+    </section>
+
+    <section class="input-box">
+      <input type="text" id="username" name="username" placeholder="Username" required />
+      <i class="bx bxs-user"></i>
+    </section>
+
+    <section class="input-box">
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <i class="bx bxs-lock-alt"></i>
+    </section>
+
+    <section class="input-box">
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required />
+      <i class="bx bxs-lock-alt"></i>
+    </section>
+
+    <section class="input-box">
+      <select id="userType" required class="user-type-select">
+        <option value="">Select user type</option>
+        <option value="regular">User</option>
+        <option value="business">Businessman</option>
+      </select>
+    </section>
+
+    <section class="remember-forget-box">
+      <div class="remember-me">
+        <input type="checkbox" name="terms" id="terms" />
+        <label for="terms">I agree to the Terms & Conditions</label>
+      </div>
+    </section>
+
+    <button class="login-btn" type="submit">Sign Up</button>
+
+    <p class="dont-have-an-account">Already have an account? <a href="login.html">Login</a>
+    </p>
+  </form>
+
+  <script>
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      const userType = document.getElementById("userType").value;
+      const agreedToTerms = document.getElementById("terms").checked;
+
+      if (!fullName || !email || !username || !password || !confirmPassword || !userType) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (!agreedToTerms) {
+        alert("You must agree to the Terms & Conditions.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const userExists = users.some(user => user.email === email || user.username === username);
+      if (userExists) {
+        alert("Email or username is already registered.");
+        return;
+      }
+
+      users.push({
+        fullName,
+        email,
+        username,
+        password,
+        type: userType,
+        businesses: []
+      });
+
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("The account has been created successfully!");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
